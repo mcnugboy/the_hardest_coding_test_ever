@@ -7,11 +7,31 @@ const nxtBtn = document.getElementById("nxt-btn");
 const questions = [
     {
         question: 'What is a regex?',
-        answer: [
-            {text: 'A genre of partying', correct: false},
-            {text: ''}
+        answers: [
+            { text: 'A genre of partying', correct: false },
+            { text: 'A brand of soup most favored by Trump', correct: false },
+            { text: 'A special string representing a pattern to be matched in a search query', correct: true },
+            { text: 'A very expensive brandy that is used in very exquisite dishes', correct: false },
         ]
-    }
+    },
+    {
+        question: 'What does a <template> tag do?',
+        answers: [
+            { text: 'A tag that allows you to hide info from a user on the page', correct: true },
+            { text: 'A tag that creates a templated form for the users to fill out', correct: false },
+            { text: 'A tag that generates user input into a meme', correct: false },
+            { text: 'A tag that can be used to edit users passwords with a single click', correct: false },
+        ]
+    },
+    {
+        question: 'What does API stand for?',
+        answers: [
+            { text: 'Asset Proportion Index', correct: false },
+            { text: 'Application Programming Interface', correct: true },
+            { text: 'Airplane Pilot Intervention', correct: false },
+            { text: 'Ascendent Project Integration', correct: false },
+        ]
+    },
 ]
     
 
