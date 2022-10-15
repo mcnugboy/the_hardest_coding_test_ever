@@ -4,6 +4,18 @@ const aElement = document.getElementById("a");
 const comBtn = document.getElementById("com-btn");
 const nxtBtn = document.getElementById("nxt-btn");
 
+const questions = [
+    {
+        question: 'What is a regex?',
+        answer: [
+            {text: 'A genre of partying', correct: false},
+            {text: ''}
+        ]
+    }
+]
+    
+
+
 var time = 40;
 
 function setTimer() {
@@ -50,4 +62,13 @@ function showQ(question) {
         aElement.appendChild(btn)
     })
 };
+
+function resetState () {
+    clearStatus(document.body)
+    nxtBtn.classList.add('hide')
+    while (aElement.firstChild) {
+      aElement.removeChild(aElement.firstChild)
+    }
+};
+
 
