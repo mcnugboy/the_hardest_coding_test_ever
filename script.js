@@ -34,8 +34,6 @@ const questions = [
     },
 ]
     
-
-
 var time = 40;
 
 function setTimer() {
@@ -83,7 +81,20 @@ function showQ(question) {
     })
 };
 
-function resetState () {
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(aElement.children).forEach(button => {
+      setStatusClass(btn, button.dataset.correct)
+    })
+    if (shuffleQ.length > currentQIndex + 1) {
+      nxtButn.classList.remove('hide')
+    
+    }
+  };
+
+  function resetState () {
     clearStatus(document.body)
     nxtBtn.classList.add('hide')
     while (aElement.firstChild) {
@@ -91,4 +102,22 @@ function resetState () {
     }
 };
 
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+  };
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+      element.classList.add('correct')
+    } else {
+      element.classList.add('wrong')
+    }
+  };
+
+function endQuiz() {
+    clearInterval(setTimer);
+    var questionDisplay = document.getElementById("question-id");
+    questionDisplay.style.display = "none";
+    };
