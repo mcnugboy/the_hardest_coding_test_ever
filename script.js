@@ -68,10 +68,10 @@ function nxtQ() {
 };
 
 function showQ(question) {
-    qElement.innertext = question.question,
+    qElement.textContent = question.question,
     question.answers.forEach(answer => {
         const btn = document.createElement('button')
-        btn.innertext = answer.text,
+        btn.textContent = answer.text,
         btn.classList.add('button')
         if (answer.correct) {
             btn.dataset.correct = answer.correct
