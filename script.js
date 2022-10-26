@@ -63,20 +63,20 @@ function startQuiz () {
 };
 
 function nxtQ() {
-    showQ(shuffleQ[currentQIndex]),
     resetState()
+    showQ(shuffleQ[currentQIndex])
 };
 
 function showQ(question) {
     qElement.innertext = question.question,
-    question.answers = forEach(answer => {
+    question.answers.forEach(answer => {
         const btn = document.createElement('button')
         btn.innertext = answer.text,
         btn.classList.add('button')
         if (answer.correct) {
             btn.dataset.correct = answer.correct
         }
-        btn.addEventListener('click', selectA)
+        btn.addEventListener('click', selectAnswer)
         aElement.appendChild(btn)
     })
 };
@@ -95,7 +95,7 @@ function selectAnswer(e) {
   };
 
   function resetState () {
-    clearStatus(document.body)
+    clearStatusClass(document.body)
     nxtBtn.classList.add('hide')
     while (aElement.firstChild) {
       aElement.removeChild(aElement.firstChild)
